@@ -1,0 +1,494 @@
+timestamp: 2016-05-04T10:46:33.652787
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512)
+);
+success!
+timestamp: 2016-05-04T10:46:34.598110
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-05-04T10:46:34.782802
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2016-05-04T10:46:34.952030
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2016-05-04T10:46:35.108651
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-05-04T10:46:35.265345
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2016-05-04T10:48:33.851597
+CREATE TABLE aluno(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome CHAR(512),
+    idade INTEGER
+);
+success!
+timestamp: 2016-05-04T10:52:44.403492
+ALTER TABLE aluno ADD foto CHAR(512);
+success!
+timestamp: 2016-05-04T11:29:15.833226
+ALTER TABLE aluno ADD responsavel CHAR(512);
+success!
+timestamp: 2016-05-04T11:29:16.016872
+CREATE TABLE responsavel(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome CHAR(512),
+    idade INTEGER,
+    foto CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-05-04T12:09:38.782602
+ALTER TABLE aluno ADD complemento CHAR(512);
+timestamp: 2016-05-04T12:09:38.909004
+ALTER TABLE aluno ADD sala CHAR(512);
+timestamp: 2016-05-04T12:09:39.030844
+ALTER TABLE aluno ADD professor CHAR(512);
+timestamp: 2016-05-04T12:09:39.153731
+ALTER TABLE aluno ADD numero CHAR(512);
+timestamp: 2016-05-04T12:09:39.287949
+ALTER TABLE aluno ADD bairro CHAR(512);
+timestamp: 2016-05-04T12:09:39.432547
+ALTER TABLE aluno ADD endereco CHAR(512);
+timestamp: 2016-05-04T12:09:39.555951
+ALTER TABLE aluno ADD criado_em TIMESTAMP;
+success!
+timestamp: 2016-05-04T12:09:39.839786
+CREATE TABLE sala(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome CHAR(512)
+);
+success!
+timestamp: 2016-05-04T12:09:40.003772
+CREATE TABLE professor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome CHAR(512),
+    foto CHAR(512)
+);
+success!
+success!
+success!
+success!
+timestamp: 2016-05-04T12:16:59.141972
+ALTER TABLE aluno ADD cidade CHAR(512);
+timestamp: 2016-05-04T12:16:59.283783
+ALTER TABLE aluno ADD cep CHAR(8);
+success!
+success!
+success!
+timestamp: 2016-05-04T12:17:30.476419
+CREATE TABLE cidade(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome CHAR(512),
+    uf CHAR(512)
+);
+success!
+timestamp: 2016-05-04T12:17:30.657238
+CREATE TABLE uf(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome CHAR(512)
+);
+success!
+success!
+success!
+timestamp: 2016-05-04T12:24:24.880935
+ALTER TABLE aluno ADD criado_por INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-05-04T12:30:36.196436
+ALTER TABLE responsavel ADD discipulo CHAR(1);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-05-04T13:53:29.578538
+ALTER TABLE responsavel ADD telefone CHAR(512);
+timestamp: 2016-05-04T13:53:29.720911
+ALTER TABLE responsavel ADD discipulador CHAR(512);
+success!
+success!
+success!
+timestamp: 2016-05-04T14:03:21.573253
+CREATE TABLE discipuladores(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome CHAR(512)
+);
+success!
+timestamp: 2016-05-04T14:04:42.455329
+ALTER TABLE aluno ADD discipulador CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-05-04T14:30:20.026048
+ALTER TABLE aluno ADD idaderesp INTEGER;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-05-04T14:38:56.313027
+ALTER TABLE responsavel ADD email CHAR(512);
+success!
+timestamp: 2016-05-04T14:38:56.498586
+ALTER TABLE professor ADD telefone CHAR(512);
+success!
+timestamp: 2016-05-04T14:38:56.668870
+ALTER TABLE discipuladores ADD telefone CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-05-04T14:46:09.352317
+ALTER TABLE aluno ADD rua CHAR(512);
+success!
+success!
+timestamp: 2016-05-04T14:47:06.481542
+ALTER TABLE responsavel ADD complemento CHAR(512);
+timestamp: 2016-05-04T14:47:06.643343
+ALTER TABLE responsavel ADD bairro CHAR(512);
+timestamp: 2016-05-04T14:47:06.788023
+ALTER TABLE responsavel ADD cidade CHAR(512);
+timestamp: 2016-05-04T14:47:06.933017
+ALTER TABLE responsavel ADD rua CHAR(512);
+timestamp: 2016-05-04T14:47:07.057980
+ALTER TABLE responsavel ADD numero CHAR(512);
+timestamp: 2016-05-04T14:47:07.182304
+ALTER TABLE responsavel ADD criado_por INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ;
+timestamp: 2016-05-04T14:47:07.325832
+ALTER TABLE responsavel ADD cep CHAR(8);
+timestamp: 2016-05-04T14:47:07.449434
+ALTER TABLE responsavel ADD criado_em TIMESTAMP;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <link href="{{=URL('static','css/bootstrap.min.css')}}" rel="stylesheet">
+   <link href="{{=URL('static','css/bootstrap-flat.min.css')}}" rel="stylesheet">
+<head>
+	<title>Alunos</title>
+</head>
+<body>
+
+
+<h2>Cadastro de Alunos</h2>
+	<div class="row-fluid">
+  <div class="col-md-8 col-md-offset-2">
+
+  	 {{=form.custom.begin}}
+
+  	 <div class="form-group">
+        <label for="descricao" class="col-sm-2 control-label">Nome:</label>
+        {{widget.nome.attributes.update({'_class':'form-control', '_placeholder':'nome do aluno'})}}
+        {{=form.nome}}
+      </div>
+
+  <!--     <div class="form-group">
+        <label for="descricao" class="col-sm-2 control-label">Descrição:</label>
+        {{widget.descricao.attributes.update({'_class':'form-control', '_placeholder':'Descreva um pouco sobre sua equipe'})}}
+        {{=form.custom.widget.descricao}}
+      </div>
+      <div class="form-group">
+        <label for="imagem" class="col-sm-2 control-label">Enviar foto</label>
+        {{=form.custom.widget.foto}}
+       
+      </div>
+      <div class="form-group">
+        <div class="col-sm-2"> -->
+          {{=form.custom.submit}}
+        </div>
+      </div>
+    {{=form.custom.end}}
+
+</div>
+</div>
+</body>
+</html>

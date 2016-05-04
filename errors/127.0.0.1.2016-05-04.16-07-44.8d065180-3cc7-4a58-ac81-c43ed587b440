@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.AttributeError'> 'DAL' object has no attribute 'discipulador'"
+p3
+sS'layer'
+p4
+S'/home/leonardo/web2py/applications/kids/controllers/administracao.py'
+p5
+sS'code'
+p6
+S'# @auth.requires(auth.has_membership(role=\'Administradores\') or\n#                auth.has_membership(role=\'Equipe\'))\n@auth.requires_login()\ndef alunos():\n\n\t"""Form cadastro de Aluno """\n\n\tresponse.title = "Administra\xc3\xa7\xc3\xa3o"\n\t\n\n\tform = SQLFORM(db.aluno)\n\t\n\treturn locals()\n\ndef responsavel():\n\n\tform = SQLFORM(db.responsavel)\n\n\treturn locals()\n\ndef discipulador():\n\n\tform = SQLFORM(db.discipulador)\n\n\treturn locals()\t\n    \n\n\t   \n\n\n\nresponse._vars=response._caller(discipulador)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/home/leonardo/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/home/leonardo/web2py/applications/kids/controllers/administracao.py", line 32, in <module>\n  File "/home/leonardo/web2py/gluon/globals.py", line 412, in <lambda>\n    self._caller = lambda f: f()\n  File "/home/leonardo/web2py/applications/kids/controllers/administracao.py", line 23, in discipulador\n    form = SQLFORM(db.discipulador)\n  File "/home/leonardo/web2py/gluon/packages/dal/pydal/base.py", line 921, in __getattr__\n    return BasicStorage.__getattribute__(self, key)\nAttributeError: \'DAL\' object has no attribute \'discipulador\'\n'
+p11
+s.

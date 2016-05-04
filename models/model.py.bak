@@ -1,0 +1,4 @@
+db.define_table('aluno',
+                Field('nome','string',requires=IS_NOT_EMPTY()),
+                Field('idade','integer'),
+                )
